@@ -2,7 +2,7 @@
  {
  id: '1',
  name: 'Bulbasaur',
- image: '/001.png'
+ image: '/public/001.png'
  },
 
  {

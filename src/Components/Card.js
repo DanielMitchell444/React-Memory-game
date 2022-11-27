@@ -4,13 +4,6 @@ import { useState } from 'react';
 
 const Card = (props) => {
 
-let array = [];
-const [card, clickCard] = useState('')
-
-const randomizeCard = () => {
-    
-}
-
 
 
  return(
