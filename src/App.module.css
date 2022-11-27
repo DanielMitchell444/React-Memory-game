@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+}
+
+body{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+.card{
+  /* Change background color */
+  background-color: white;
+
+  /* Add border */
+  border: 1px solid black;
+
+  /* Add space between the border and the content */
+  padding: 8px;
+
+  border-radius: 12px;
+
+  margin: 20px;
+
+  width: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+img{
+width: 200px;
+}
+
+.content{
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
