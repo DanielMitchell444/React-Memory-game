@@ -2,37 +2,37 @@
  {
  id: '1',
  name: 'Bulbasaur',
- image: '/public/001.png'
+ image: 'https://i.postimg.cc/Nj1xHYz0/001.jpg'
  },
 
  {
     id: '2',
     name: 'Ivysaur',
-    image: '/002.png'
+    image: 'https://i.postimg.cc/pTyKpwSG/002.jpg'
     },
 
     {
         id: '3',
         name: 'Venasaur',
-        image: '/003.png'
+        image: 'https://i.postimg.cc/CKrqTvKj/003.jpg'
         },
 
         {
             id: '4',
             name: 'Charmander',
-            image: '/index.jpg'
+            image: 'https://i.postimg.cc/FH4Lw69d/index.jpg'
             },
 
             {
             id: '5',
             name: "Charmelon",
-            image: '/005.png'
+            image: 'https://i.postimg.cc/JhFGdGTx/004.jpg'
             },
 
             {
             id: 6,
             name: 'Charzard',
-            image: '006.png'
+            image: 'https://i.postimg.cc/X7gX62Hp/006.png'
             }
 ]
 
