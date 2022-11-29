@@ -5,18 +5,17 @@ import { useState } from 'react';
 const Card = (props) => {
 
 
-
  return(
-<body>
 <div className = {styles.content}>
  <div className= {styles.card}>
-  <img src = {props.image}  
-  onClick = {props.matchCard}
+  <img src = {props.image}
+  onClick = {props.shuffle}
+
   /> 
   <h1>{props.name}</h1>
+  <h2>{props.keys}</h2>
  </div>
  </div>
- </body>
 
  )
 }
