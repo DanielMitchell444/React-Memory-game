@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className= {styles.App}>
-    {shuffle.map((datas) => {
+    {cardArray.map((datas) => {
      return <Card
      image = {datas.image}
      name = {datas.name}
