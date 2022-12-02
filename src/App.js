@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import  styles from './App.module.css';
 import Card from './Components/Card';
 import data from '../src/Components/data';
+import score from './Components/score';
 import { useState } from 'react';
 import {useEffect} from 'react';
 
@@ -14,6 +15,8 @@ function App() {
   }
 
     function shuffle(array) {
+
+      let generatedArray = []
       let currentIndex = array.length,  randomIndex;
     
       // While there remain elements to shuffle.
@@ -26,21 +29,21 @@ function App() {
         // And swap it with the current element.
         [array[currentIndex], array[randomIndex]] = [
           array[randomIndex], array[currentIndex]];
+
       }
-    
-      return array;
+
+      setCardArray(array);
     }
 
 
   return (
     <div className= {styles.App}>
     {cardArray.map((datas) => {
+
      return <Card
      image = {datas.image}
      name = {datas.name}
      keys = {datas.id}
-     click = {matchCard}
-     shuffle = {shuffle(data)}
 
      />
     })}
