@@ -30,7 +30,7 @@
             },
 
             {
-            id: 6,
+            id: '6',
             name: 'Charzard',
             image: 'https://i.postimg.cc/X7gX62Hp/006.png'
             }

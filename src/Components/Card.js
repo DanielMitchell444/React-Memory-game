@@ -6,13 +6,15 @@ const Card = (props) => {
 
 
  return(
+
 <div className = {styles.content}>
  <div className= {styles.card}
  onClick = {props.onClick}
  >
 
   <img src = {props.image}
-  onClick = {props.onClick}
+  onClick = {props.matchCard}
+  
 
   /> 
   <h1>{props.name}</h1>

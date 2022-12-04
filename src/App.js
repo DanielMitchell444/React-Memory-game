@@ -9,14 +9,12 @@ import {useEffect} from 'react';
 function App() {
   const [cardArray, setCardArray] = useState(data);
   const [images, setImages] = useState(data);
+  const [count, setCount] = useState(0);
 
-  const matchCard = () => {
-     
-  }
+ 
 
     function shuffle(array) {
-
-      let generatedArray = []
+      
       let currentIndex = array.length,  randomIndex;
     
       // While there remain elements to shuffle.
@@ -31,8 +29,43 @@ function App() {
           array[randomIndex], array[currentIndex]];
 
       }
+    
+      setCardArray([...array])
 
-      setCardArray(array);
+      matchCard(data);
+
+      console.log(cardArray)
+
+      return array;
+    }
+
+    const addScore = () => {
+     
+      setCount(count + 1);
+
+      console.log(count);
+
+      
+    }
+
+    const resetScore = () => {
+      setCount(count + 0);
+    }
+
+    const matchCard = (index) => {
+    
+     if(!cardArray.includes(index)){
+       
+
+      addScore()
+
+     }
+
+     else {
+      console.log('cards do not match');
+      resetScore();
+    }
+    
     }
 
 
@@ -44,6 +77,8 @@ function App() {
      image = {datas.image}
      name = {datas.name}
      keys = {datas.id}
+     onClick = {() => shuffle(data) }
+     matchCard = {() => matchCard(data)}
 
      />
     })}
