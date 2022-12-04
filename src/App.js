@@ -56,6 +56,7 @@ function App() {
     
      if(!cardArray.includes(index)){
        
+      setCardArray([...cardArray, index]);
 
       addScore()
 
