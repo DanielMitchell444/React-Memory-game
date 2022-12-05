@@ -11,10 +11,11 @@ function App() {
   const [images, setImages] = useState(data);
   const [count, setCount] = useState(0);
   const [clickedCard, setClickedCard] = useState([])
+  const [guess, clickedGuess] = useState([]);
 
  
 
-    function shuffle(array) {
+    function shuffle(array, ) {
       
       let currentIndex = array.length,  randomIndex;
     
@@ -33,9 +34,12 @@ function App() {
     
       setCardArray([...array])
 
-      matchCard(data);
+      setCount(count + 1);
 
-      console.log(cardArray)
+
+      console.log(count);
+
+      
 
       return array;
     }
@@ -53,12 +57,18 @@ function App() {
       setCount(count + 0);
     }
 
-    const matchCard = (event) => {
+    const matchCard = (e) => {
     
-     const scoreClick = event.target.name;
+     const scoreClick = e.target.name;
      
      if(!clickedCard.includes(scoreClick)){
-      addScore();
+
+      shuffle(data);
+      console.log(e.target.name);
+     }
+
+     else {
+      console.log('player loses');
      }
     
     }
@@ -72,8 +82,7 @@ function App() {
      image = {datas.image}
      name = {datas.name}
      keys = {datas.id}
-     onClick = {() => shuffle(data) }
-     matchCard = {matchCard}
+     onClick = {matchCard}
 
      />
     })}

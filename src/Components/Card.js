@@ -13,7 +13,6 @@ const Card = (props) => {
  >
 
   <img src = {props.image}
-  onClick = {props.matchCard}
   
 
   /> 
