@@ -10,6 +10,7 @@ function App() {
   const [cardArray, setCardArray] = useState(data);
   const [images, setImages] = useState(data);
   const [count, setCount] = useState(0);
+  const [clickedCard, setClickedCard] = useState([])
 
  
 
@@ -52,20 +53,13 @@ function App() {
       setCount(count + 0);
     }
 
-    const matchCard = (index) => {
+    const matchCard = (event) => {
     
-     if(!cardArray.includes(index)){
-       
-      setCardArray([...cardArray, index]);
-
-      addScore()
-
+     const scoreClick = event.target.name;
+     
+     if(!clickedCard.includes(scoreClick)){
+      addScore();
      }
-
-     else {
-      console.log('cards do not match');
-      resetScore();
-    }
     
     }
 
@@ -79,7 +73,7 @@ function App() {
      name = {datas.name}
      keys = {datas.id}
      onClick = {() => shuffle(data) }
-     matchCard = {() => matchCard(data)}
+     matchCard = {matchCard}
 
      />
     })}
