@@ -2,22 +2,25 @@ import React from 'react';
 import styles from '../App.module.css';
 import { useState } from 'react';
 
-const Card = (props) => {
+const Card = ({name, keys, image, onClick}) => {
 
 
  return(
 
-<div className = {styles.content}>
+<div 
+className = {styles.content}
+>
  <div className= {styles.card}
- onClick = {props.onClick}
+ onClick = {onClick}
+ name = {name}
  >
 
-  <img src = {props.image}
+  <img src = {image}
   
 
   /> 
-  <h1>{props.name}</h1>
-  <h2>{props.keys}</h2>
+  <h1>{name}</h1>
+  <h2>{keys}</h2>
  </div>
  </div>
 

@@ -15,7 +15,7 @@ function App() {
 
  
 
-    function shuffle(array, ) {
+    function shuffle(array) {
       
       let currentIndex = array.length,  randomIndex;
     
@@ -64,7 +64,7 @@ function App() {
      if(!clickedCard.includes(scoreClick)){
 
       shuffle(data);
-      console.log(e.target.name);
+      console.log(e.target.dataset.value);
      }
 
      else {
@@ -82,6 +82,7 @@ function App() {
      image = {datas.image}
      name = {datas.name}
      keys = {datas.id}
+     data-value = {data.name}
      onClick = {matchCard}
 
      />
