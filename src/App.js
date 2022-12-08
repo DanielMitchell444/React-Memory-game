@@ -5,6 +5,7 @@ import data from '../src/Components/data';
 import score from './Components/score';
 import { useState } from 'react';
 import {useEffect} from 'react';
+import Scoreboard from './Components/Scoreboard';
 
 function App() {
   const [cardArray, setCardArray] = useState(data);
@@ -34,7 +35,6 @@ function App() {
     
       setCardArray([...array])
 
-      setCount(count + 1);
 
 
       console.log(count);
@@ -45,6 +45,8 @@ function App() {
     }
 
     const addScore = () => {
+
+      let count = 0;
      
       setCount(count + 1);
 
@@ -54,42 +56,57 @@ function App() {
     }
 
     const resetScore = () => {
-      setCount(count + 0);
+      setCount(0);
     }
 
-    const matchCard = (e) => {
+    const matchCard = (value) => {
     
-     const scoreClick = e.target.name;
+     const scoreClick = value;
      
-     if(!clickedCard.includes(scoreClick)){
+     if(guess.includes(value)){
 
       shuffle(data);
-      console.log(e.target.dataset.value);
+
+      setCount(0);
+
+      clickedGuess([]);
+
+
      }
 
-     else {
-      console.log('player loses');
+    else {
+      let seenPokemon = [...guess, value];
+
+      clickedGuess(seenPokemon);
+
+
+      setCount(count + 1);
+
+      shuffle(data);
+
      }
     
     }
 
 
   return (
+    <div>
+   <h1>Score: {count}</h1>
     <div className= {styles.App}>
     {cardArray.map((datas) => {
-
+     <Scoreboard />
      return <Card
      image = {datas.image}
      name = {datas.name}
      keys = {datas.id}
-     data-value = {data.name}
-     onClick = {matchCard}
+     data-value = {datas.name}
+     onClick = {() => matchCard(datas)}
 
      />
     })}
-
-
+     </div>
     </div>
+    
   );
 
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../App.module.css';
 import { useState } from 'react';
+import Scoreboard from './Scoreboard';
 
 const Card = ({name, keys, image, onClick}) => {
 
@@ -12,7 +13,7 @@ className = {styles.content}
 >
  <div className= {styles.card}
  onClick = {onClick}
- name = {name}
+ value = {name}
  >
 
   <img src = {image}
